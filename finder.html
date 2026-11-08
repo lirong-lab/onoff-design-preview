@@ -728,6 +728,7 @@ html.ofnd-lock,html.ofnd-lock body{overflow:hidden}
 .ofnd-overlay button{font-family:inherit;text-transform:none;letter-spacing:normal;box-shadow:none;min-height:0;line-height:1.3}
 .ofnd-overlay .ofnd-x{flex:none;display:grid;place-items:center;width:44px;height:44px;margin:0;padding:0 0 3px;border:1.5px solid var(--of-line2);border-radius:50%;background:#fff;color:var(--of-ink);font-size:28px;font-weight:400;line-height:1;cursor:pointer;transition:border-color .15s}
 .ofnd-overlay .ofnd-x:hover{border-color:var(--of-ink)}
+.ofnd-overlay :focus-visible{outline:3px solid #1A73E8;outline-offset:2px}
 
 /* conversation */
 .ofnd-log{flex:1;display:flex;flex-direction:column;overflow-y:auto;padding:22px 22px 18px;background:var(--of-page);scroll-behavior:smooth;overscroll-behavior:contain}
@@ -794,6 +795,8 @@ html.ofnd-lock,html.ofnd-lock body{overflow:hidden}
 
 /* card = the site listing card (white r16, image tile, logo top-left, tint badges, stock dot, signature buy) */
 .ofnd-card{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;min-width:0;padding:14px 14px 16px;border:2px solid transparent;border-radius:16px;background:#fff;box-shadow:var(--of-sh);transition:border-color .15s,box-shadow .15s}
+/* desktop row: the top card has the reassure line under its button; the alternatives reserve the same room so the 3 buttons align */
+@media (min-width:601px){.ofnd-card--top~.ofnd-card--alt:after{content:"";display:block;height:calc(10px + 13px * 1.45)}}
 @media (hover:hover){.ofnd-card:hover{border-color:var(--of-green);box-shadow:0 10px 30px rgba(46,139,58,.16)}}
 .ofnd-card--top{border-color:var(--of-green);background:radial-gradient(90% 34% at 100% 0%,#EDF7E7,transparent 70%),#fff;box-shadow:0 12px 34px rgba(46,139,58,.18)}
 .ofnd-badge{position:absolute;top:-14px;inset-inline-start:16px;z-index:2;display:inline-flex;align-items:center;gap:6px;padding:5px 14px 5px 12px;border-radius:999px;background:var(--of-gpill);color:#fff;font-size:14px;font-weight:700;line-height:1.2;text-shadow:0 1px 1px rgba(0,0,0,.18);box-shadow:0 4px 12px rgba(46,139,58,.32)}
